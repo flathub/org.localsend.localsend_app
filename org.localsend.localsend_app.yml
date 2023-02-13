@@ -1,6 +1,6 @@
 app-id: org.localsend.localsend_app
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 command: localsend
 separate-locales: false
@@ -35,8 +35,8 @@ modules:
       - type: file
         dest-filename: LocalSend.AppImage
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.6.2/LocalSend-1.6.2.AppImage
-        sha256: b50f10d1a1c85069c14f9a02a61d4b7ee32daef841c8af0b6d67520299bcb95b
+        url: https://github.com/localsend/localsend/releases/download/v1.7.0/LocalSend-1.7.0.AppImage
+        sha256: 0b498728876f8743e388ffa54cf881bbc33aef95b2c2122047006318aa9638bc
         x-checker-data:
           type: anitya
           project-id: 324117
