@@ -12,6 +12,7 @@ finish-args:
   - --socket=fallback-x11
   # Need to detect network info
   - --system-talk-name=org.freedesktop.NetworkManager
+  - --system-talk-name=org.freedesktop.hostname1
   # Allow access to home directory, see https://github.com/localsend/localsend/issues/256
   - --filesystem=home
 modules:
