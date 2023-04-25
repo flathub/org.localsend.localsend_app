@@ -16,6 +16,26 @@ finish-args:
   # Allow access to home directory, see https://github.com/localsend/localsend/issues/256
   - --filesystem=xdg-download
 modules:
+  - name: mate-common
+    buildsystem: autotools
+    sources:
+      - type: git
+        url: https://github.com/mate-desktop/mate-common.git
+        tag: v1.26.0
+
+  - name: libayatana-appindicator
+    buildsystem: autotools
+    build-options:
+      env:
+        ACLOCAL_PATH: "/app/share/aclocal"
+    config-opts:
+      - --disable-static
+      - --disable-tests
+    sources:
+      - type: git
+        url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
+        tag: 0.5.5
+
   - name: localsend
     buildsystem: simple
     build-commands:
