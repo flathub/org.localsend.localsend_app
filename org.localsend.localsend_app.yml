@@ -117,7 +117,7 @@ modules:
         "squashfs-root/org.localsend.localsend_app.desktop"
       - install -Dm644 squashfs-root/org.localsend.localsend_app.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm644 org.localsend.localsend_app.metainfo.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
-      - mkdir /app/bin
+      - install -d "${FLATPAK_DEST}/bin"
       - ln -s "${FLATPAK_DEST}/localsend/AppRun" "${FLATPAK_DEST}/bin/localsend"
 
       - rm squashfs-root/org.localsend.localsend_app.desktop
