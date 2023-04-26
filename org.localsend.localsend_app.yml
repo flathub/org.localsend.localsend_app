@@ -17,6 +17,8 @@ finish-args:
   - --system-talk-name=org.freedesktop.hostname1
   # Allow access to home directory, see https://github.com/localsend/localsend/issues/256
   - --filesystem=xdg-download
+  # Tray indicator
+  - --talk-name=org.kde.StatusNotifierWatcher
 build-options:
   append-path: /usr/lib/sdk/vala/bin
   prepend-ld-library-path: /usr/lib/sdk/vala/lib
@@ -60,13 +62,14 @@ modules:
       - name: gtest
         buildsystem: cmake-ninja
         sources:
-          - type: archive
-            url: https://github.com/google/googletest/archive/refs/tags/release-1.12.1.tar.gz
-            sha256: 81964fe578e9bd7c94dfdb09c8e4d6e6759e19967e397dbea48d1c10e45d0df2
+          - type: git
+            url: https://github.com/google/googletest.git
+            tag: v1.13.0
+            commit: b796f7d44681514f58a683a3a71ff17c94edb0c1
             x-checker-data:
               type: anitya
               project-id: 18290
-              url-template: https://github.com/google/googletest/archive/refs/tags/release-$version.tar.gz
+              tag-template: v$version
       - name: ayatana-ido
         buildsystem: cmake-ninja
         sources:
