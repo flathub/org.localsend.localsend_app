@@ -38,8 +38,8 @@ modules:
       - type: file
         dest-filename: LocalSend.AppImage
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.8.0/LocalSend-1.8.0.AppImage
-        sha256: 49eb71c34bab7c90a21c8f8cb3e220ae88b508b0a00741f906c57a464c7204c1
+        url: https://github.com/localsend/localsend/releases/download/v1.9.0/LocalSend-1.9.0.AppImage
+        sha256: 8b9fe16901ecc370403851ac1cee35a22a29d4980c2124ebd43c34b40798ba95
         x-checker-data:
           type: anitya
           project-id: 324117
