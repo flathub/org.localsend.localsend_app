@@ -16,13 +16,6 @@ finish-args:
   # Allow access to home directory, see https://github.com/localsend/localsend/issues/256
   - --filesystem=xdg-download
 modules:
-  - name: mate-common
-    buildsystem: autotools
-    sources:
-      - type: git
-        url: https://github.com/mate-desktop/mate-common.git
-        tag: v1.26.0
-
   # https://github.com/flathub/app.vup.Vup/blob/8c5073c7c5b8f24805013abc85a0860ca2439396/app.vup.Vup.yaml#L30-L78
   - name: libayatana-appindicator
     buildsystem: cmake-ninja
@@ -30,6 +23,7 @@ modules:
       - -DENABLE_BINDINGS_MONO=NO
       - -DENABLE_BINDINGS_VALA=NO
     modules:
+      - shared-modules/intltool/intltool-0.51.json
       - name: libdbusmenu-gtk3 # Dependency of libayatana-appindicator
         buildsystem: autotools
         build-options:
