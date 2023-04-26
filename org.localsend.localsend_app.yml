@@ -2,6 +2,8 @@ app-id: org.localsend.localsend_app
 runtime: org.freedesktop.Platform
 runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.vala
 command: localsend
 separate-locales: false
 finish-args:
@@ -15,7 +17,94 @@ finish-args:
   - --system-talk-name=org.freedesktop.hostname1
   # Allow access to home directory, see https://github.com/localsend/localsend/issues/256
   - --filesystem=xdg-download
+  # Tray indicator
+  - --talk-name=org.kde.StatusNotifierWatcher
+build-options:
+  append-path: /usr/lib/sdk/vala/bin
+  prepend-ld-library-path: /usr/lib/sdk/vala/lib
 modules:
+  # https://github.com/flathub/app.vup.Vup/blob/8c5073c7c5b8f24805013abc85a0860ca2439396/app.vup.Vup.yaml#L30-L78
+  - name: libayatana-appindicator
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DENABLE_BINDINGS_MONO=NO
+      - -DENABLE_BINDINGS_VALA=NO
+    modules:
+      - shared-modules/intltool/intltool-0.51.json
+      - name: libdbusmenu-gtk3 # Dependency of libayatana-appindicator
+        buildsystem: autotools
+        build-options:
+          cflags: -Wno-error
+          env:
+            HAVE_VALGRIND_FALSE: '#'
+            HAVE_VALGRIND_TRUE: ''
+        config-opts:
+          - --with-gtk=3
+          - --disable-dumper
+          - --disable-static
+          - --disable-tests
+          - --disable-gtk-doc
+          - --enable-introspection=no
+          - --disable-vala
+        sources:
+          - type: archive
+            url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
+            sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
+        cleanup:
+          - /include
+          - /libexec
+          - /lib/pkgconfig
+          - /lib/*.la
+          - /share/doc
+          - /share/libdbusmenu
+          - /share/gtk-doc
+          - /share/gir-1.0
+      - name: gtest
+        buildsystem: cmake-ninja
+        sources:
+          - type: git
+            url: https://github.com/google/googletest.git
+            tag: v1.13.0
+            commit: b796f7d44681514f58a683a3a71ff17c94edb0c1
+            x-checker-data:
+              type: anitya
+              project-id: 18290
+              tag-template: v$version
+      - name: ayatana-ido
+        buildsystem: cmake-ninja
+        sources:
+          - type: git
+            url: https://github.com/AyatanaIndicators/ayatana-ido.git
+            tag: 0.9.3
+            commit: 10b05bdb1bde609b3adc0af76efd4ccfab7a583a
+            x-checker-data:
+              type: anitya
+              project-id: 18445
+              tag-template: $version
+              stable-only: true
+      - name: libayatana-indicator
+        buildsystem: cmake-ninja
+        sources:
+          - type: git
+            url: https://github.com/AyatanaIndicators/libayatana-indicator.git
+            tag: 0.9.3
+            commit: a62e8ca13040554a8fc2536ce7e6aa888c5729d9
+            x-checker-data:
+              type: anitya
+              project-id: 18447
+              tag-template: $version
+              stable-only: true
+    sources:
+      - type: git
+        url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
+        tag: 0.5.92
+        commit: d214fe3e7a6b1ba8faea68d70586310b34dc643c
+        x-checker-data:
+          type: anitya
+          project-id: 18446
+          tag-template: $version
+          stable-only: true
+
   - name: localsend
     buildsystem: simple
     build-commands:
@@ -28,7 +117,7 @@ modules:
         "squashfs-root/org.localsend.localsend_app.desktop"
       - install -Dm644 squashfs-root/org.localsend.localsend_app.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm644 org.localsend.localsend_app.metainfo.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
-      - mkdir /app/bin
+      - install -d "${FLATPAK_DEST}/bin"
       - ln -s "${FLATPAK_DEST}/localsend/AppRun" "${FLATPAK_DEST}/bin/localsend"
 
       - rm squashfs-root/org.localsend.localsend_app.desktop
@@ -38,8 +127,8 @@ modules:
       - type: file
         dest-filename: LocalSend.AppImage
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.8.0/LocalSend-1.8.0.AppImage
-        sha256: 49eb71c34bab7c90a21c8f8cb3e220ae88b508b0a00741f906c57a464c7204c1
+        url: https://github.com/localsend/localsend/releases/download/v1.9.0/LocalSend-1.9.0.AppImage
+        sha256: 8b9fe16901ecc370403851ac1cee35a22a29d4980c2124ebd43c34b40798ba95
         x-checker-data:
           type: anitya
           project-id: 324117
