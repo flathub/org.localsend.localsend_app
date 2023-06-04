@@ -108,32 +108,39 @@ modules:
   - name: localsend
     buildsystem: simple
     build-commands:
-      - chmod +x LocalSend.AppImage
-      - ./LocalSend.AppImage --appimage-extract
+      - tar -xzf LocalSend.tar.gz
 
-      - install -Dm644 squashfs-root/data/flutter_assets/assets/img/logo-512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
+      # copy lib and data folders
+      - install -d "${FLATPAK_DEST}/lib"
+      - cp -r lib/* "${FLATPAK_DEST}/lib/"
+      - install -d "${FLATPAK_DEST}/data"
+      - cp -r data/* "${FLATPAK_DEST}/data/"
 
+      # copy executable
+      - install -Dm755 localsend_app "${FLATPAK_DEST}/localsend_app"
+      - ln -s "${FLATPAK_DEST}/localsend_app" "${FLATPAK_DEST}/bin/localsend"
+
+      # copy metadata files
       - desktop-file-edit --set-key=Exec --set-value='localsend %U' --set-icon="${FLATPAK_ID}"
-        "squashfs-root/org.localsend.localsend_app.desktop"
-      - install -Dm644 squashfs-root/org.localsend.localsend_app.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+        "org.localsend.localsend_app.desktop"
+      - install -Dm644 org.localsend.localsend_app.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm644 org.localsend.localsend_app.metainfo.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
-      - install -d "${FLATPAK_DEST}/bin"
-      - ln -s "${FLATPAK_DEST}/localsend/AppRun" "${FLATPAK_DEST}/bin/localsend"
-
-      - rm squashfs-root/org.localsend.localsend_app.desktop
-      - cp -r squashfs-root "${FLATPAK_DEST}/localsend"
+      - install -Dm644 data/flutter_assets/assets/img/logo-512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
 
     sources:
       - type: file
-        dest-filename: LocalSend.AppImage
+        dest-filename: LocalSend.tar.gz
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.9.1/LocalSend-1.9.1.AppImage
-        sha256: 600846909c039e8f0678e7a9ca8907bf4ebc22163c1fe2fcf15aca3fbe951e35
+        url: https://github.com/localsend/localsend/releases/download/v1.10.0/LocalSend-1.10.0-linux-x86-64.tar.gz
+        sha256: 014cfe9ec2307a2fea64aec1ac8db6bb2540960079f456c054161fbf40a6c9f7
         x-checker-data:
           type: anitya
           project-id: 324117
-          url-template: https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version.AppImage
+          url-template: https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version-linux-x86-64.tar.gz
           stable-only: true
 
       - type: file
         path: org.localsend.localsend_app.metainfo.xml
+
+      - type: file
+        path: org.localsend.localsend_app.desktop
