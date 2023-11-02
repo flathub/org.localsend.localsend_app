@@ -131,8 +131,8 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.11.1/LocalSend-1.11.1-linux-x86-64.tar.gz
-        sha256: 92f45a8e321a6f06c4bbdcb7b9f247aa486a081b8247e9d0499b4e53e9f1a1bd
+        url: https://github.com/localsend/localsend/releases/download/v1.12.0/LocalSend-1.12.0-linux-x86-64.tar.gz
+        sha256: a2f4d5a858fc53093346455866b78e272bf4207323cf7c290cbde9c26a3e97ad
         x-checker-data:
           type: anitya
           project-id: 324117
