@@ -138,7 +138,16 @@ modules:
           project-id: 324117
           url-template: https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version-linux-x86-64.tar.gz
           stable-only: true
-
+      - type: file
+        dest-filename: LocalSend.tar.gz
+        only-arches: [aarch64]
+        url: https://github.com/localsend/localsend/releases/download/v1.13.1/LocalSend-1.13.1-linux-arm-64.tar.gz
+        sha256: 63e16dd341c785269c2d7fd85f8e173d1b65337490080025132af34e2ff47a8e
+        x-checker-data:
+          type: anitya
+          project-id: 324117
+          url-template: https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version-linux-arm-64.tar.gz
+          stable-only: true
       - type: file
         path: org.localsend.localsend_app.metainfo.xml
 
