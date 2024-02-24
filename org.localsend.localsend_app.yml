@@ -97,8 +97,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
-        tag: 0.5.92
-        commit: d214fe3e7a6b1ba8faea68d70586310b34dc643c
+        tag: 0.5.93
+        commit: 238c8b02718fa5b4af95ede72beeed762094f4cc
         x-checker-data:
           type: anitya
           project-id: 18446
