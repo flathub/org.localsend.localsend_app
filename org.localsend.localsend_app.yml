@@ -87,8 +87,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/AyatanaIndicators/libayatana-indicator.git
-            tag: 0.9.3
-            commit: a62e8ca13040554a8fc2536ce7e6aa888c5729d9
+            tag: 0.9.4
+            commit: 611bb384b73fa6311777ba4c41381a06f5b99dad
             x-checker-data:
               type: anitya
               project-id: 18447
@@ -97,8 +97,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
-        tag: 0.5.92
-        commit: d214fe3e7a6b1ba8faea68d70586310b34dc643c
+        tag: 0.5.93
+        commit: 238c8b02718fa5b4af95ede72beeed762094f4cc
         x-checker-data:
           type: anitya
           project-id: 18446
@@ -131,8 +131,8 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.13.1/LocalSend-1.13.1-linux-x86-64.tar.gz
-        sha256: 4fd90026d02b26517290ba9582668c69aabb75e7354e00f702150d5896476f47
+        url: https://github.com/localsend/localsend/releases/download/v1.14.0/LocalSend-1.14.0-linux-x86-64.tar.gz
+        sha256: 000a5093203af0430c451fdf7f65263db40bb8683f173af32013e1ffc06ecf43
         x-checker-data:
           type: anitya
           project-id: 324117
@@ -141,8 +141,8 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [aarch64]
-        url: https://github.com/localsend/localsend/releases/download/v1.13.1/LocalSend-1.13.1-linux-arm-64.tar.gz
-        sha256: 63e16dd341c785269c2d7fd85f8e173d1b65337490080025132af34e2ff47a8e
+        url: https://github.com/localsend/localsend/releases/download/v1.14.0/LocalSend-1.14.0-linux-arm-64.tar.gz
+        sha256: 744f91c7dd68baf59c152ce0a628b67858be63705a14e894e7d40bcb4239bc3c
         x-checker-data:
           type: anitya
           project-id: 324117
