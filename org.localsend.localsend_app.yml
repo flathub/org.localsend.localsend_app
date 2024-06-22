@@ -75,8 +75,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/AyatanaIndicators/ayatana-ido.git
-            tag: 0.10.1
-            commit: 13402a2cc4616b4b5f4244413599e635fcfc1401
+            tag: 0.10.2
+            commit: 2bb2f321c64b903b6e4b5c581d79602632c851c5
             x-checker-data:
               type: anitya
               project-id: 18445
@@ -97,8 +97,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
-        tag: 0.5.92
-        commit: d214fe3e7a6b1ba8faea68d70586310b34dc643c
+        tag: 0.5.93
+        commit: 238c8b02718fa5b4af95ede72beeed762094f4cc
         x-checker-data:
           type: anitya
           project-id: 18446
