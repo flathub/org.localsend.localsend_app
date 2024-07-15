@@ -45,8 +45,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/AyatanaIndicators/ayatana-ido.git
-            tag: 0.10.2
-            commit: 2bb2f321c64b903b6e4b5c581d79602632c851c5
+            tag: 0.10.3
+            commit: 9906cc1d22f17c3629d32521473b172ae594ddcf
             x-checker-data:
               type: anitya
               project-id: 18445
@@ -109,8 +109,8 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.14.0/LocalSend-1.14.0-linux-x86-64.tar.gz
-        sha256: 000a5093203af0430c451fdf7f65263db40bb8683f173af32013e1ffc06ecf43
+        url: https://github.com/localsend/localsend/releases/download/v1.15.0/LocalSend-1.15.0-linux-x86-64.tar.gz
+        sha256: ca4fe5d6c35a9b25c4057256ec92924d570a50006e9ad94239ee10bd0bd1ac08
         x-checker-data:
           type: anitya
           project-id: 324117
@@ -119,8 +119,8 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [aarch64]
-        url: https://github.com/localsend/localsend/releases/download/v1.14.0/LocalSend-1.14.0-linux-arm-64.tar.gz
-        sha256: 744f91c7dd68baf59c152ce0a628b67858be63705a14e894e7d40bcb4239bc3c
+        url: https://github.com/localsend/localsend/releases/download/v1.15.0/LocalSend-1.15.0-linux-arm-64.tar.gz
+        sha256: d15ef6224b8ec3d29c7799df5d48d650ff353997271e7f2b1c3a4339075fffe9
         x-checker-data:
           type: anitya
           project-id: 324117
