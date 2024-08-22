@@ -109,8 +109,8 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.15.3/LocalSend-1.15.3-linux-x86-64.tar.gz
-        sha256: e109caa90c2217b09cbd9ddfb50dc83c6c847ed218e55cdfe52bbcadc4ff4ea1
+        url: https://github.com/localsend/localsend/releases/download/v1.15.4/LocalSend-1.15.4-linux-x86-64.tar.gz
+        sha256: 5ad91df9ab37cf24592cfebbb2a57782703055228246cf33afa6b18a7452d9cd
         x-checker-data:
           type: anitya
           project-id: 324117
@@ -119,8 +119,8 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [aarch64]
-        url: https://github.com/localsend/localsend/releases/download/v1.15.3/LocalSend-1.15.3-linux-arm-64.tar.gz
-        sha256: 69ecc25d9afd50d16cc66a0e1eb12e50f1ec21fce822067572cacb2c874699c2
+        url: https://github.com/localsend/localsend/releases/download/v1.15.4/LocalSend-1.15.4-linux-arm-64.tar.gz
+        sha256: e81768ea7907d19e4153f9b06320f31a2aae733e895d0c71e3bae9e91c1230f8
         x-checker-data:
           type: anitya
           project-id: 324117
