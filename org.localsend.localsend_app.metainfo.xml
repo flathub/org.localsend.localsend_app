@@ -30,19 +30,20 @@
 
   <content_rating type="oars-1.1"/>
 
-  <screenshot type="default">
-        <image xml:space="preserve">https://raw.githubusercontent.com/flathub/org.localsend.localsend_app/refs/heads/master/Media/Receive.png</image>
-        <caption>Receiving interface</caption>
-      </screenshot>
-      <screenshot>
-        <image xml:space="preserve">https://raw.githubusercontent.com/flathub/org.localsend.localsend_app/refs/heads/master/Media/send.png</image>
-        <caption>Sending interface</caption>
-      </screenshot>
-      <screenshot>
-        <image xml:space="preserve">https://raw.githubusercontent.com/flathub/org.localsend.localsend_app/refs/heads/master/Media/settings.png</image>
-        <caption>Settings interface</caption>
-      </screenshot>
-    </screenshots>
+  <screenshots>
+    <screenshot type="default">
+      <image xml:space="preserve">https://raw.githubusercontent.com/flathub/org.localsend.localsend_app/refs/heads/master/Media/Receive.png</image>
+      <caption>Receiving interface</caption>
+    </screenshot>
+    <screenshot>
+      <image xml:space="preserve">https://raw.githubusercontent.com/flathub/org.localsend.localsend_app/refs/heads/master/Media/send.png</image>
+      <caption>Sending interface</caption>
+    </screenshot>
+    <screenshot>
+      <image xml:space="preserve">https://raw.githubusercontent.com/flathub/org.localsend.localsend_app/refs/heads/master/Media/settings.png</image>
+      <caption>Settings interface</caption>
+    </screenshot>
+  </screenshots>
   <releases>
     <release version="1.15.4" date="2024-08-20">
       <description></description>
