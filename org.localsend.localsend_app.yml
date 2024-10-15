@@ -104,6 +104,7 @@ modules:
       - install -Dm644 org.localsend.localsend_app.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm644 org.localsend.localsend_app.metainfo.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
       - install -Dm644 data/flutter_assets/assets/img/logo-512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
+      - install -Dm644 data/flutter_assets/assets/img/logo-32-white.png "${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/${FLATPAK_ID}-tray.png"
 
     sources:
       - type: file
