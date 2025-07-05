@@ -17,6 +17,8 @@ finish-args:
   - --system-talk-name=org.freedesktop.hostname1
   # Allow access to home directory, see https://github.com/localsend/localsend/issues/256
   - --filesystem=xdg-download
+  # Fix some issues with theming (read-only)
+  - --filesystem=xdg-config/gtk-3.0:ro
   # Tray indicator
   - --talk-name=org.kde.StatusNotifierWatcher
 build-options:
