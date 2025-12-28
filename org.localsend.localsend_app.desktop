@@ -1,11 +1,10 @@
 [Desktop Entry]
-X-AppImage-Arch=x86_64
-X-AppImage-Version=latest
-X-AppImage-Name=LocalSend
 Name=LocalSend
 Exec=localsend_app
 Icon=localsend
 Type=Application
 Terminal=false
 Categories=Utility;
-Comment=Share files to nearby devices.
+Comment=Share files to nearby devices
+GenericName=Local file sharing
+StartupNotify=false
