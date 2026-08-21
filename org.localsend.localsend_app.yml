@@ -110,8 +110,8 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.18.0/LocalSend-1.18.0-linux-x86-64.tar.gz
-        sha256: 5054f970dda73787a95fcd706dac62cdfb810ff4bde8c5a20f1332ee5d908afb
+        url: https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-linux-x86-64.tar.gz
+        sha256: 287690a9a8eb6da9c83cc97b3e3030ac67daf32a7331fcf307d0939300658d16
         x-checker-data:
           type: anitya
           project-id: 324117
@@ -120,8 +120,8 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [aarch64]
-        url: https://github.com/localsend/localsend/releases/download/v1.18.0/LocalSend-1.18.0-linux-arm-64.tar.gz
-        sha256: 20b581d62d4d5e3ad4e6ecb1a3142cc7b86ada775b46d9edbd7ced7e37b8696c
+        url: https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-linux-arm-64.tar.gz
+        sha256: dd61f74f1ce3f4e25aca41cd3ce650d6a99353d7baba81a8139807275b88e606
         x-checker-data:
           type: anitya
           project-id: 324117
