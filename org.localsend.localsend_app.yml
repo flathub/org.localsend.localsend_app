@@ -33,8 +33,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
-        tag: 0.6.0
-        commit: 27f9d9ddcf20be87c6cede65c89c5b098b16330d
+        tag: 0.6.1
+        commit: 836356daa20c833cbc051c77c6b4f97c94de5e61
         x-checker-data:
           type: anitya
           project-id: 18446
@@ -80,7 +80,8 @@ modules:
           - /share/libdbusmenu
         sources:
           - type: archive
-            url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
+            url: 
+              https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
             sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
 
   - name: localsend
@@ -110,22 +111,26 @@ modules:
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [x86_64]
-        url: https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-linux-x86-64.tar.gz
+        url: 
+          https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-linux-x86-64.tar.gz
         sha256: 287690a9a8eb6da9c83cc97b3e3030ac67daf32a7331fcf307d0939300658d16
         x-checker-data:
           type: anitya
           project-id: 324117
-          url-template: https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version-linux-x86-64.tar.gz
+          url-template: 
+            https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version-linux-x86-64.tar.gz
           stable-only: true
       - type: file
         dest-filename: LocalSend.tar.gz
         only-arches: [aarch64]
-        url: https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-linux-arm-64.tar.gz
+        url: 
+          https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-linux-arm-64.tar.gz
         sha256: dd61f74f1ce3f4e25aca41cd3ce650d6a99353d7baba81a8139807275b88e606
         x-checker-data:
           type: anitya
           project-id: 324117
-          url-template: https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version-linux-arm-64.tar.gz
+          url-template: 
+            https://github.com/localsend/localsend/releases/download/v$version/LocalSend-$version-linux-arm-64.tar.gz
           stable-only: true
       - type: file
         path: org.localsend.localsend_app.metainfo.xml
